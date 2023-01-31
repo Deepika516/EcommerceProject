@@ -1,9 +1,10 @@
 export interface IProduct {
-  pid: number;
+  id: number;
   title: string;
-  price: number;
   description: string;
+  price: number;
+  brand: string;
   category: string;
-  stock: number;
+  quantity: number;
   image: string;
 }

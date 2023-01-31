@@ -11,6 +11,7 @@
               aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
+            
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mb-2 mb-lg-0">
 
@@ -26,19 +27,27 @@
                   <a class="nav-link px-md-3" routerLink="/allProducts" >All Products</a>
                 </li> 
 
-                 <!-- <li class="nav-item">
-                  <a class="nav-link px-md-3" routerLink="/category" >Add Category</a>
-                </li>   -->
-
-                <!-- <li class="nav-item">
-                  <button class="btn btn-primay">Logout</button>
-                </li> -->
-  
               </ul>
+              </div>
+
+                
+                
   
-            </div>
+              
+  
+            
             <ul class="list-unstyled list-inline m-0 mb-2 mb-lg-0">
+              <!-- for search area -->
               <li class="list-inline-item">
+              
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-dark" type="submit"><i class="bi bi-search"></i></button>
+                </form>
+              </li>
+              
+               <!-- for user login area -->
+                <li class="list-inline-item">
                   <div class="dropdown">
                     <a class="dropdown-toggle text-dark" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                       <i class="bi bi-person"></i>
@@ -49,7 +58,9 @@
                       <li> <a class="nav-link px-md-3" href="#" role="button">Logout</a></li>
                     </ul>
                     </div>     
-              </li>
+              </li>  
+
+               <!-- for admin -->
             <li class="list-inline-item">
               <div class="dropdown">
                 <a class="dropdown-toggle text-dark" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -61,6 +72,13 @@
                 </ul>
             </div>
             </li>
+
+             <!-- for cart -->
+             <li class="list-inline-item">
+               <a  id="cartButton">
+                <i class="bi bi-cart" routerLink="/cartDetails"></i>
+               </a>
+             </li>
           </ul>
   
           </nav>

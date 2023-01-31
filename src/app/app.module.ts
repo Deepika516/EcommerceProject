@@ -4,6 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { AgGridModule } from 'ag-grid-angular';
+
 import { AppComponent } from './app.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
@@ -13,6 +15,13 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { ShowAllCategoryComponent } from './components/show-all-category/show-all-category.component';
 import { ShowAllProductsComponent } from './components/show-all-products/show-all-products.component';
+import { ProductDetailsComponent } from './components/productDetails/productDetails.component';
+import { CartDetailsComponent } from './components/add-to-cart/cartDetails.component';
+import {
+  GridModule,
+  PagerModule,
+  EditService,
+} from '@syncfusion/ej2-angular-grids';
 
 @NgModule({
   declarations: [
@@ -25,6 +34,8 @@ import { ShowAllProductsComponent } from './components/show-all-products/show-al
     HomeComponent,
     ShowAllCategoryComponent,
     ShowAllProductsComponent,
+    ProductDetailsComponent,
+    CartDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,8 +43,11 @@ import { ShowAllProductsComponent } from './components/show-all-products/show-al
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    AgGridModule,
+    GridModule,
+    PagerModule,
   ],
-  providers: [],
+  providers: [EditService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

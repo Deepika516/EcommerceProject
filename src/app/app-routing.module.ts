@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CartDetailsComponent } from './components/add-to-cart/cartDetails.component';
 import { CategoryComponent } from './components/category/category.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { ProductDetailsComponent } from './components/productDetails/productDetails.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ShowAllCategoryComponent } from './components/show-all-category/show-all-category.component';
 import { ShowAllProductsComponent } from './components/show-all-products/show-all-products.component';
@@ -36,6 +38,14 @@ const routes: Routes = [
   {
     path: 'allProducts',
     component: ShowAllProductsComponent,
+  },
+  {
+    path: 'allProducts/:id',
+    component: ProductDetailsComponent,
+  },
+  {
+    path: 'cartDetails',
+    component: CartDetailsComponent,
   },
 ];
 

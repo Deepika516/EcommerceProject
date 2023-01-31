@@ -1,0 +1,55 @@
+
+<!-- <div class="raw-product-detail">
+<div class="col-sm-6">
+ <img src="{{productData.image}}" alt=""> -->
+<!-- <h4>{{productData.price}}</h4> -->
+<!-- </div>
+<div class="col-sm-6">
+ <h2>{{productDetail.title}}</h2>
+
+<h5>{{productDetail.description}}</h5> -->
+<!-- </div>
+</div>  -->
+<section class="py-5">
+<div class="container">
+    <div class="row d-flex">
+        <div class="col-md-6">
+            <img
+          src="{{productData.image}}"
+          alt="img"
+          class="img-fluid rounded-start"
+        />
+        </div>
+        <div class="col-md-6">
+            <h2>{{productData.title}}</h2>
+            <h3 class="card-text text-primary mb-4">
+                {{ productData.price | currency}}
+            </h3>
+            <p class="card-text mb-2">
+                {{productData.description}}
+            </p>
+            
+                <button type="button" class="btn btn-primary btn-sm me-2" data-mdb-toggle="tooltip"
+                  title="Remove item" (click)="removeProduct()">
+                  <i class="bi bi-trash3"></i>
+                </button>
+                <button type="button" class="btn btn-danger btn-sm" data-mdb-toggle="tooltip"
+                  title="Move to the wish list">
+                  <i class="bi bi-heart-fill"></i>
+                </button>
+                <div class="quantity-grp mb-4">
+                <button class="min-quantity" (click)="handleProductQuantity('minus')">-</button>
+                <input class="quantity-input" type="text" value="{{productQuantity}}">
+                <button  class="max-quantity" (click)="handleProductQuantity('plus')">+</button>
+                </div>
+
+          <button class="btn btn-success me-4 ">Buy Now</button>
+          <button class="btn btn-primary" (click)="addToCart()"> Add to Cart</button>
+
+        </div>
+    </div>
+</div>
+</section>
+
+
+

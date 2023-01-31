@@ -1,38 +1,29 @@
-<section class="categories-sec py-5">
+
     <div class="container">
         <div class="row">
-            <div class="col-md-3" *ngFor="let cat of categories">
-                <div class="category-wrapper position-relative mb-2">
-                    <img src="{{cat.img}}" class="w-100" alt="image" >
-                    <button class="btn btn-outline-primary position-absolute top-50 start-50 translate-middle" type="button">{{cat.categoryTitle}}</button>
-                </div>
-            </div>
+           
+                <!-- <div class="col-md-3" *ngFor="let cat of categories">
+                    <div class="category-wrapper position-relative mb-2">
+                        <img src="{{cat.img}}" class="w-100" alt="image" >
+                        <button class="btn btn-outline-primary position-absolute top-50 start-50 translate-middle" type="button">{{cat.categoryTitle}}</button>
+                    </div>
+                </div>      -->
+
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                   
+                      <div class="card col-md-3 me-4" *ngFor="let cat of categories">
+                        <img src="{{cat.img}}" class="card-img-top" alt="image">
+                        <div class="card-body">
+                          <h5 class="card text-center">{{cat.categoryTitle}}</h5>
+                        </div>
+                    
+                    </div>
+              
         </div>
     </div>
-</section> 
+
                 
                 
-                <!-- <div class="category-wrapper position-relative mb-2">
-                    <img src="../../../assets/img/newarival.jpg" class=
-                <!-- <div class="category-wrapper position-relative mb-2">
-                    <img src="../../../assets/img/newarival.jpg" class="w-100" alt="image" >
-                    <button class="btn btn-outline-primary position-absolute top-50 start-50 translate-middle" type="button">KIDS</button>
-                </div> -->
-            <!-- </div> -->
-            <!-- <div class="col-md-3">
-                <div class="category-wrapper position-relative mb-4">
-                    <img src="../../../assets/img/women.jpg" class="w-100" alt="image">
-                    <button class="btn btn-outline-success position-absolute top-50 start-50 translate-middle" type="button">WOMEN</button>
-                </div>
-            </div> -->
-            <!-- <div class="col-md-6">
-                <div class="category-wrapper position-relative mb-4 ">
-                    <img src="../../../assets/img/accessory.jpg" class="w-100" alt="image" >
-                    <button class="btn btn-outline-primary position-absolute top-50 start-50 translate-middle" type="button">SALE</button>
-                </div>
-                <div class="category-wrapper position-relative mb-2 w-50 ">
-                    <img src="../../../assets/img/newarival.jpg" class="w-100" alt="image" >
-                    <button class="btn btn-outline-primary position-absolute top-50 start-50 translate-middle" type="button">ELECTRONIC</button>
-                </div>
-            </div> -->
-           
+
+
+    

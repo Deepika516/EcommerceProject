@@ -1,0 +1,57 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div>
+                <h2>My Cart</h2>
+                <div class="col-md-8 details">
+                    <div *ngFor="let cart of CartDetails">
+                        <ul class="details-wrapper">
+                            <li>
+                                <img class="productImg mb-2" src="{{cart.image}}" alt="image">
+                            </li>
+                            <li>
+                                <span>{{cart.title}}</span>
+                            </li>
+                            <li>
+                                <span>{{cart.price | currency}}</span>
+                            </li>
+                            <li>
+                                <span>
+                                    {{cart.quantity}}
+                                </span>
+                            </li>
+                            <li>
+                                <button class="btn btn-outline-dark"><i class="bi bi-trash-fill"></i></button>
+                            </li>
+                        </ul>
+                        </div>
+                    
+                    <div class="col-md-4 summary">
+                        <h3 class="heading">Summary</h3>
+                        <div class="list-wrapper">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <span>Amount:{{cartSummary.price | currency}}</span>
+                                </li>
+                                <li>
+                                    <span>Tax:{{cartSummary.tax | currency}}</span>
+                                </li>
+                                <li>
+                                    <span>Delivery Charges:{{cartSummary.deliveryCharges | currency}}</span>
+                                </li>
+                                <li>
+                                    <span>Discount:{{cartSummary.discount | currency}}</span>
+                                </li>
+                                <li>
+                                    <h4><span>Total:{{cartSummary.total | currency}}</span></h4>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

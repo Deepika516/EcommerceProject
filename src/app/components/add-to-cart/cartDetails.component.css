@@ -1,0 +1,31 @@
+.cart{
+    margin-top: 30p;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #ddd;
+}
+
+.productImg{
+    height: 100px;
+}
+
+.details-wrapper{
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+
+}
+
+.heading{
+    text-align: center;
+}
+
+.list-wrapper{
+    justify-content: space-between;
+    /* padding: 5;
+    display: flex; */
+}
+

@@ -1,0 +1,16 @@
+.quantity-grp{
+    margin-top: 30px;
+}
+
+.min-quantity{
+padding: 10px;
+}
+
+.quantity-input{
+    width: 50px;
+    padding: 10px;
+}
+
+.max-quantity{
+padding: 10px;
+}

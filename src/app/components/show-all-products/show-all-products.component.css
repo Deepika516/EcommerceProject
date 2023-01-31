@@ -1,0 +1,37 @@
+/* .card{
+    display: none;
+  }
+      
+  #card-wrapper:hover  #card {
+    display: block;
+    
+  } */
+
+/* .card-detail {
+    display:none;
+}
+
+.card-wrapper:hover .card-detail {
+    display:block;
+} */
+
+ .card{ 
+    width:200px;
+    height:300px;
+    max-height: 500px;
+    padding: 8px; 
+     text-align: center; 
+    border-radius: 20px;
+ 
+    color:rgb(29,24,24);
+    overflow: hidden;
+    display: flex;
+    margin: top 10px;
+    margin-left: 30px;
+    margin: bottom 10px;
+    box-shadow: o o 15px rgba(0,0,0,40%); 
+}
+
+/* .product-img{
+    
+}  */
