@@ -1,0 +1,12 @@
+<section class="products-sec py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3" *ngFor="let product of products">
+                <div class="product-wrapper position-relative mb-2">
+                    <img src="{{product.image}}" class="w-100" alt="image" >
+                    <button class="btn btn-outline-primary position-absolute top-50 start-50 translate-middle" type="button">{{product.title}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 

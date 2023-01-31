@@ -1,0 +1,21 @@
+/* Category Sec */
+/* .categories-sec .category-wrapper button{
+    
+} */
+
+/*banner sec*/
+@media (min-width: 768px){
+	.banner-sec .banner-content {
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		max-width: 450px;
+        left: 50%;
+	}
+}
+
+@media (max-width: 767px){
+	br{
+		display: none;
+	}
+}
