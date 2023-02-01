@@ -23,9 +23,12 @@
     text-align: center;
 }
 
-.list-wrapper{
+.wrapper{
+    padding: 5%;
+}
+
+.listwrap{
+    display: flex;
     justify-content: space-between;
-    /* padding: 5;
-    display: flex; */
 }
 

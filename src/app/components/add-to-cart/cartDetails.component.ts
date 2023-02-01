@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { take } from 'rxjs';
 import { IAmount, ICart } from 'src/app/interfaces/cart.interface';
 import { CartProductsService } from 'src/app/services/cart-products.service';
@@ -10,6 +11,7 @@ import { CartProductsService } from 'src/app/services/cart-products.service';
 })
 export class CartDetailsComponent implements OnInit {
   CartDetails: ICart[] = [];
+  removeCart: ICart[] = [];
   cartSummary: IAmount = {
     price: 0,
     tax: 0,
@@ -18,7 +20,10 @@ export class CartDetailsComponent implements OnInit {
     total: 0,
   };
   productQuantity: number = 1;
-  constructor(private cartService: CartProductsService) {}
+  constructor(
+    private cartService: CartProductsService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.getCart();
@@ -46,5 +51,21 @@ export class CartDetailsComponent implements OnInit {
           this.cartSummary.deliveryCharges;
         console.log(this.cartSummary);
       });
+  }
+
+  removeFromCart(id: number) {
+    debugger;
+    let cartId = this.CartDetails.find((e) => e.id === id);
+    this.cartService
+      .removeProduct(id)
+      .pipe(take(1))
+      .subscribe((result: ICart[]) => {
+        if (result) {
+          this.getCart();
+        }
+      });
+  }
+  checkOrder() {
+    this.router.navigate(['orderDetails']);
   }
 }

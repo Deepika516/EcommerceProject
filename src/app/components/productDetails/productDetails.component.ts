@@ -39,6 +39,10 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit {
     this.router.navigate(['allProducts']);
   }
 
+  checkOrder() {
+    this.router.navigate(['orderDetails']);
+  }
+
   handleProductQuantity(value: string) {
     if (this.productQuantity < 25 && value === 'plus') {
       this.productQuantity += 1;

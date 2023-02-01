@@ -1,0 +1,73 @@
+<section class="py-3">
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="border rounded-2 p-4">
+                <h4 class="mb-3">Address Details</h4>
+                <p>Enter your destination to get a shipping estimate</p>
+                <form>
+                    <div class="mb-3">
+                        <label class="form-check-label fw-bold mb-1">Country</label>
+                        <select class="form-select" (change)="onChangeConutry($event)">
+                            <option selected >Select</option>
+                            <option  *ngFor="let country of countries" value="{{country.id}}">{{country.countryName}}</option>
+                          </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-check-label fw-bold mb-1">State</label>
+                        <select class="form-select">
+                            <option selected>Select</option>
+                            <option value="1">One</option>
+                          </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-check-label fw-bold mb-1">Address</label>
+                        <input class="form-control" type="text" placeholder="Enter your Address">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-check-label fw-bold mb-1">Email Address</label>
+                        <input class="form-control" type="email" placeholder="Enter your Email">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-check-label fw-bold mb-1">Contact Number</label>
+                        <input class="form-control" type="text" placeholder="Enter your Contact No.">
+                    </div>
+
+                    <div>
+                        <input type="submit" value="Save" class="btn btn-primary w-100">
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="border rounded-2 p-4">
+                <h4 class="mb-3">Note</h4>
+                <p>Add special instructions for your order</p>
+                <form>
+                    <label class="form-check-label fw-bold mb-1">Special Instructions</label>
+                    <textarea class="form-control" placeholder="Leave a comment here" rows="8"></textarea>
+                </form>
+            </div>
+        </div>
+        
+
+        <div class="col-md-4">
+            <div class="border rounded-2 p-4">
+                <h4 class="mb-3">Order Total</h4>
+               <p class="mb-2 d-flex justify-content-between">Subtotal: <span class="fw-bold h5">300</span></p>
+               <p class="mb-2 d-flex justify-content-between">Total: <span class="fw-bold h5 text-primary">300</span></p>
+               <div>
+                <button class="btn btn-primary w-100">Place Order </button> 
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>

@@ -22,6 +22,7 @@ import {
   PagerModule,
   EditService,
 } from '@syncfusion/ej2-angular-grids';
+import { CheckoutOrderComponent } from './components/checkout-order/checkout-order.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import {
     ShowAllProductsComponent,
     ProductDetailsComponent,
     CartDetailsComponent,
+    CheckoutOrderComponent,
   ],
   imports: [
     BrowserModule,
