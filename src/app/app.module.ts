@@ -23,6 +23,7 @@ import {
   EditService,
 } from '@syncfusion/ej2-angular-grids';
 import { CheckoutOrderComponent } from './components/checkout-order/checkout-order.component';
+import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { CheckoutOrderComponent } from './components/checkout-order/checkout-ord
     ProductDetailsComponent,
     CartDetailsComponent,
     CheckoutOrderComponent,
+    MyOrdersComponent,
   ],
   imports: [
     BrowserModule,

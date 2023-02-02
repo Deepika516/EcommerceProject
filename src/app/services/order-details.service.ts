@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { IAddress, IOrder, IRecipt } from '../interfaces/order.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -24,5 +26,29 @@ export class OrderDetailsService {
       { id: 5, cid: 13, stateName: 'Victoria' },
       { id: 6, cid: 13, stateName: 'Queensland' },
     ];
+  }
+
+  onSaveAddress(
+    country: string,
+    state: string,
+    address: string,
+    email: string,
+    contact: number
+  ): Observable<IAddress[]> {
+    return this.http.post<IAddress[]>('http://localhost:3006/saveAddress', {
+      countryName: country,
+      stateName: state,
+      address: address,
+      email: email,
+      contact: contact,
+    });
+  }
+
+  orderdetails(): Observable<IRecipt[]> {
+    return this.http.get<IRecipt[]>('http://localhost:3006/orderInvoice');
+  }
+
+  onViewOrders(): Observable<IOrder[]> {
+    return this.http.get<IOrder[]>('http://localhost:3006/myOrders');
   }
 }

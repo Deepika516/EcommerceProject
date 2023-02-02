@@ -5,6 +5,7 @@ import { CategoryComponent } from './components/category/category.component';
 import { CheckoutOrderComponent } from './components/checkout-order/checkout-order.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 import { ProductDetailsComponent } from './components/productDetails/productDetails.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ShowAllCategoryComponent } from './components/show-all-category/show-all-category.component';
@@ -51,6 +52,10 @@ const routes: Routes = [
   {
     path: 'orderDetails',
     component: CheckoutOrderComponent,
+  },
+  {
+    path: 'viewOrder',
+    component: MyOrdersComponent,
   },
 ];
 

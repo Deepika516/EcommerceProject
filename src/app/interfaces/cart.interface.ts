@@ -14,14 +14,3 @@ export interface IAmount {
   tax: number;
   total: number;
 }
-
-export interface ICountry {
-  id: number;
-  countryName: string;
-}
-
-export interface IState {
-  id: number;
-  cid: number;
-  stateName: string;
-}
