@@ -1,89 +1,91 @@
 <header>
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand fw-bold" href="#">
-              Zepto<span class="text-danger">Mart</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mb-2 mb-lg-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand fw-bold" href="#">
+            Zepto<span class="text-danger">Mart</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-                <li class="nav-item login-signup position-relative ps-md-2 ms-md-2" >
-                  <a class="nav-link px-md-3" routerLink="/home">Home</a>
-                </li>
-                
-                <li class="nav-item login-signup position-relative ps-md-2 ms-md-2" >
-                  <a class="nav-link px-md-3" routerLink="/allCategory">All Categories</a>
-                </li>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
 
-                  <li class="nav-item">
-                  <a class="nav-link px-md-3" routerLink="/allProducts" >All Products</a>
-                </li> 
-
-              </ul>
-              </div>
-
-                
-                
-  
-              
-  
-            
-            <ul class="list-unstyled list-inline m-0 mb-2 mb-lg-0">
-              <!-- for search area -->
-              <li class="list-inline-item">
-              
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-dark" type="submit"><i class="bi bi-search"></i></button>
-                </form>
+              <li class="nav-item login-signup position-relative ps-md-2 ms-md-2">
+                <a class="nav-link px-md-3" routerLink="/home">Home</a>
               </li>
-              
-               <!-- for user login area -->
-                <li class="list-inline-item">
-                  <div class="dropdown">
-                    <a class="dropdown-toggle text-dark" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="bi bi-person"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-                      <li> <a class="nav-link px-md-3" routerLink="/login">Login</a></li>
-                      <li> <a class="nav-link px-md-3" routerLink="/signup">Register</a></li>
-                      <li> <a class="nav-link px-md-3" href="#" role="button">Logout</a></li>
-                    </ul>
-                    </div>     
-              </li>  
 
-               <!-- for admin -->
+              <li class="nav-item login-signup position-relative ps-md-2 ms-md-2">
+                <a class="nav-link px-md-3" routerLink="/allCategory">All Categories</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link px-md-3" routerLink="/allProducts">All Products</a>
+              </li>
+
+            </ul>
+          </div>
+
+
+
+
+
+
+
+          <ul class="list-unstyled list-inline m-0 mb-2 mb-lg-0">
+            <!-- for search area -->
+            <li class="list-inline-item">
+
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-dark" type="submit"><i class="bi bi-search"></i></button>
+              </form>
+            </li>
+
+            <!-- for user login area -->
             <li class="list-inline-item">
               <div class="dropdown">
-                <a class="dropdown-toggle text-dark" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="dropdown-toggle text-dark" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <i class="bi bi-person"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                  <li> <a class="nav-link px-md-3" routerLink="/login">Login</a></li>
+                  <li> <a class="nav-link px-md-3" routerLink="/signup">Register</a></li>
+                  <li> <a class="nav-link px-md-3" href="#" role="button">Logout</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <!-- for admin -->
+            <li class="list-inline-item">
+              <div class="dropdown">
+                <a class="dropdown-toggle text-dark" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                  aria-expanded="false">
                   <i class="bi bi-person-lock"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-                  <li> <a class="nav-link px-md-3" routerLink="/products" >Add Products</a></li>
-                  <li>  <a class="nav-link px-md-3" routerLink="/category" >Add Category</a></li>
+                  <li> <a class="nav-link px-md-3" routerLink="/products">Add Products</a></li>
+                  <li> <a class="nav-link px-md-3" routerLink="/category">Add Category</a></li>
                 </ul>
-            </div>
+              </div>
             </li>
 
-             <!-- for cart -->
-             <li class="list-inline-item">
-               <a  id="cartButton">
+            <!-- for cart -->
+            <li class="list-inline-item">
+              <a id="cartButton">
                 <i class="bi bi-cart" routerLink="/cartDetails"></i>
-               </a>
-             </li>
+              </a>
+            </li>
           </ul>
-  
-          </nav>
 
-        </div>
+        </nav>
+
       </div>
     </div>
-  </header>
+  </div>
+</header>

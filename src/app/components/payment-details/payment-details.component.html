@@ -1,0 +1,35 @@
+<section class="py-5">
+    <div class="container">
+        <h6>Ordered on :15th September 2022</h6>
+              <div class="text-end">
+                <a routerLink="/checkInvoice">Invoice</a>
+              </div>
+        <div class="row">
+        <div class="col-md-4 mb-2">
+            <div class="border rounded-2 p-4">
+                <h4> Shipping Address:</h4>
+                <p>{{paymentDetails.address}},{{paymentDetails.state}},{{paymentDetails.country}}</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-2">
+            <div class="border rounded-2 p-4">
+                <h4> Payment Method</h4>
+                <p>
+                    Pay on Delivery (Cash/Card). Cash on delivery (COD) available. 
+                    Card/Net banking acceptance subject to device availability.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="border rounded-2 p-4">
+                <h4>Order Summary</h4>
+                <p class="mb-1 d-flex justify-content-between">Subtotal:<span>{{paymentDetails.subtotal | currency}}</span></p>
+                <p class="mb-1 d-flex justify-content-between">Tax:<span>{{paymentDetails.tax | currency}}</span></p>
+                <p class="mb-1 d-flex justify-content-between">Discount:<span>{{paymentDetails.discount | currency}}</span></p>
+                <p class="mb-1 d-flex justify-content-between">DeliveryCharges:<span>{{paymentDetails.deliverycharges | currency}}</span></p>
+                <P class="mb-1 d-flex justify-content-between">Grandtotal:<span>{{paymentDetails.total  | currency}}</span></P>
+            </div>
+        </div>
+    </div>
+</div>
+</section>

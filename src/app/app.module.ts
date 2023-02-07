@@ -24,6 +24,9 @@ import {
 } from '@syncfusion/ej2-angular-grids';
 import { CheckoutOrderComponent } from './components/checkout-order/checkout-order.component';
 import { MyOrdersComponent } from './components/my-orders/my-orders.component';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
+import { PaymentDetailsComponent } from './components/payment-details/payment-details.component';
+import { InvoiceComponent } from './components/invoice/invoice.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,9 @@ import { MyOrdersComponent } from './components/my-orders/my-orders.component';
     CartDetailsComponent,
     CheckoutOrderComponent,
     MyOrdersComponent,
+    OrderDetailsComponent,
+    PaymentDetailsComponent,
+    InvoiceComponent,
   ],
   imports: [
     BrowserModule,

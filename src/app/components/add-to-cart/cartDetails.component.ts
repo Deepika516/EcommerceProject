@@ -38,7 +38,6 @@ export class CartDetailsComponent implements OnInit {
         let price = 0;
         cartData.forEach((item) => {
           price = price + +(item.price * item.quantity);
-          console.log(price);
         });
         this.cartSummary.price = price;
         this.cartSummary.discount = price / 10;
@@ -49,23 +48,10 @@ export class CartDetailsComponent implements OnInit {
           this.cartSummary.tax +
           this.cartSummary.deliveryCharges -
           this.cartSummary.discount;
-        console.log(this.cartSummary);
       });
   }
 
-  removeFromCart(id: number) {
-    debugger;
-    let cartId = this.CartDetails.find((e) => e.id === id);
-    this.cartService
-      .removeProduct(id)
-      .pipe(take(1))
-      .subscribe((result: ICart[]) => {
-        if (result) {
-          this.getCart();
-        }
-      });
-  }
   checkOrder() {
-    this.router.navigate(['orderDetails']);
+    this.router.navigate(['checkDetails']);
   }
 }

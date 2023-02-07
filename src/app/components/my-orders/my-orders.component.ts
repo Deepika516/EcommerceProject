@@ -16,15 +16,6 @@ export class MyOrdersComponent implements OnInit {
     this.myOrders();
   }
 
-  orderDetail() {
-    this.orderService
-      .orderdetails()
-      .pipe(take(1))
-      .subscribe((invoice: IRecipt[]) => {
-        console.log(invoice);
-      });
-  }
-
   myOrders() {
     this.orderService
       .onViewOrders()

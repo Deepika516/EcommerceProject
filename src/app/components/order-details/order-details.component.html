@@ -1,0 +1,19 @@
+<section class="py-5">
+    <div class="container">
+        <div class="row d-flex">
+            <div class="col-md-6">
+                <img src="{{orderData.image}}"
+                alt="img"
+                class="img-fluid rounded-start">
+        </div>
+            <div class="col-md-6">
+                <div class="border rounded-2 p-4">
+                <h3>{{orderData.product}}</h3>
+                <h4>{{orderData.price | currency}}</h4>
+                <h5>Status:<span class="text-primary">{{orderData.status}}</span></h5> 
+                <a routerLink="/checkPayment">Payment details</a>              
+            </div>
+        </div>
+        </div>
+    </div>
+</section>

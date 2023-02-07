@@ -8,35 +8,35 @@
 
             <div class="col-md-8 details mb-2">
                 <div class="border rounded-2 p-4">
-                <div *ngFor="let cart of CartDetails">
-                    <ul class="details-wrapper">
-                        <li>
-                            <img class="productImg mb-2" src="{{cart.image}}" alt="image">
-                        </li>
-                        <li>
-                            <span>{{cart.title}}</span>
-                        </li>
-                        <li>
-                            <span>{{cart.price | currency}}</span>
-                        </li>
-                        <li>
-                            <span>
-                                {{cart.quantity}}
-                            </span>
-                        </li>
-                        <li>
-                            <button class="btn btn-outline-dark"><i class="bi bi-trash-fill"></i></button>
-                        </li>
-                    </ul>
-                </div>
+                    <div *ngFor="let cart of CartDetails">
+                        <ul class="details-wrapper">
+                            <li>
+                                <img class="productImg mb-2" src="{{cart.image}}" alt="image">
+                            </li>
+                            <li>
+                                <span>{{cart.title}}</span>
+                            </li>
+                            <li>
+                                <span>{{cart.price | currency}}</span>
+                            </li>
+                            <li>
+                                <span>
+                                    {{cart.quantity}}
+                                </span>
+                            </li>
+                            <li>
+                                <button class="btn btn-outline-dark"><i class="bi bi-trash-fill"></i></button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
 
             </div>
             <div class="col-md-4 summary">
                 <div class="border rounded-2 p-4">
-                <h3 class="heading">Summary</h3>
-              
+                    <h3 class="heading">Summary</h3>
+
                     <ul class="list-unstyled">
                         <li class="d-flex justify-content-between">
                             <span>Amount:{{cartSummary.price | currency}}</span>
@@ -56,10 +56,10 @@
                         <li>
                             <button class="btn btn-success w-100" (click)="checkOrder()">Proceed to Buy</button>
                         </li>
-                    
+
                     </ul>
                 </div>
-                
+
             </div>
 
         </div>

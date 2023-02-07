@@ -24,11 +24,16 @@ export class CheckoutOrderComponent implements OnInit {
   countries: ICountry[] = [];
   states: IState[] = [];
   orderDetails: ICart[] = [];
-  subTotal: number | undefined;
-  totalPrice: number | undefined;
+
+  cartSummary: IAmount = {
+    price: 0,
+    tax: 0,
+    deliveryCharges: 0,
+    discount: 0,
+    total: 0,
+  };
 
   ngOnInit(): void {
-    debugger;
     this.countries = this.orderService.contory();
     this.orderDetailsForm = this.formBuilder.group({
       country: [''],
@@ -41,7 +46,6 @@ export class CheckoutOrderComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    debugger;
     const country = form.value.country;
     const state = form.value.state;
     const address = form.value.address;
@@ -50,16 +54,12 @@ export class CheckoutOrderComponent implements OnInit {
 
     this.orderService
       .onSaveAddress(country, state, address, email, contact)
-      .subscribe((respData: IAddress[]) => {
-        console.log(respData);
-      });
+      .subscribe((respData: IAddress[]) => {});
   }
 
   onChangeConutry(event: any) {
-    debugger;
     let countryId = event.target.value;
     this.states = this.orderService.state().filter((e) => e.cid == countryId);
-    console.log(this.states);
   }
 
   getCart() {
@@ -71,15 +71,17 @@ export class CheckoutOrderComponent implements OnInit {
         let price = 0;
         cartData.forEach((item) => {
           price = price + +(item.price * item.quantity);
-          console.log(price);
-          this.subTotal = price;
-          this.totalPrice = price + price / 5 + 100 - price / 10;
         });
-        console.log(this.totalPrice);
+        this.cartSummary.price = price;
+        this.cartSummary.discount = price / 10;
+        this.cartSummary.tax = price / 5;
+        this.cartSummary.deliveryCharges = 100;
+        this.cartSummary.total = price + price / 5 + 100 - price / 10;
       });
   }
 
   viewOrders() {
-    this.router.navigate(['viewOrder']);
+    alert('order has been successfully register');
+    this.router.navigate(['myOrder']);
   }
 }

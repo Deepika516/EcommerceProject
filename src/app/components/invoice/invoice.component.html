@@ -1,0 +1,85 @@
+<section class="py-5">
+  <div class="container">
+    <div class="row d-flex">
+      <div class="col-md-2">
+      </div>
+
+      <div class="col-md-8">
+        <div class="border rounded-2 p-4">
+          <a class="navbar-brand fw-bold mb-4" href="#">
+            Zepto<span class="text-danger">Mart</span>
+          </a>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="border rounded-2 p-3">
+                <h5>Billing Address</h5>
+                <p> 2nd Floor, Gokul Nagar, Opp Gokul Nagar Bus Stop,Thane(w),Mumbai,
+                  Maharashtra,02225346811 ,40060,India
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+              <div class="border rounded-2 p-3 mb-4">
+                <h5>Shipping Address</h5>
+                <h6> Aashish Aggerwal</h6>
+                <p>{{invoiceDetails.address}},{{invoiceDetails.state}},
+                  <span class="text-primary">{{invoiceDetails.country}}</span>
+                </p>
+                {{invoiceDetails.email}}
+                <p><span class="text-primary">{{invoiceDetails.contact}}</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="border rounded-2 p-3 mb-4">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Order ID</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Tax</th>
+                  <th scope="col">Delivery Charges</th>
+                  <th scope="col">Discount</th>
+                  <th scope="col">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">{{invoiceDetails.id}}</th>
+                  <td>{{invoiceDetails.subtotal}}</td>
+                  <td>{{invoiceDetails.tax}}</td>
+                  <td>{{invoiceDetails.deliverycharges}}</td>
+                  <td>{{invoiceDetails.discount}}</td>
+                  <td>{{invoiceDetails.total}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+              <p class="mb-1 d-flex justify-content-between">SubTotal:<span>{{invoiceDetails.subtotal |
+                  currency}}</span>
+              <p class="mb-1 d-flex justify-content-between">GrandTotal:<span
+                  class="text-primary">{{invoiceDetails.total | currency}}</span>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+
+      <div class="col-md-2">
+
+      </div>
+    </div>
+  </div>
+</section>

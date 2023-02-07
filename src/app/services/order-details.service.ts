@@ -44,11 +44,15 @@ export class OrderDetailsService {
     });
   }
 
-  orderdetails(): Observable<IRecipt[]> {
-    return this.http.get<IRecipt[]>('http://localhost:3006/orderInvoice');
+  orderInvoice(): Observable<IRecipt> {
+    return this.http.get<IRecipt>('http://localhost:3006/orderInvoice');
   }
 
   onViewOrders(): Observable<IOrder[]> {
-    return this.http.get<IOrder[]>('http://localhost:3006/myOrders');
+    return this.http.get<IOrder[]>('http://localhost:3006/myOrder');
+  }
+
+  onViewOrderDetail(id: number): Observable<IOrder> {
+    return this.http.get<IOrder>(`http://localhost:3006/myOrder/${id}`);
   }
 }

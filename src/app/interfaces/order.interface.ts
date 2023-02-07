@@ -18,12 +18,16 @@ export interface IAddress {
 }
 
 export interface IRecipt {
+  id: string;
   country: string;
   state: string;
   address: string;
   email: string;
   contact: number;
   subtotal: number;
+  tax: number;
+  discount: number;
+  deliverycharges: number;
   total: number;
 }
 

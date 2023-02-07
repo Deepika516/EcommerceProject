@@ -7,16 +7,12 @@
                 <tr class="table-primary">
                     <th>Order</th>
                     <th>Name</th>
-                    <th>price</th>
-                    <th>status</th>
-                    <th>Action</th>
+                    <th>details</th>
                 </tr>
                 <tr *ngFor="let order of orders">
                     <td><img class="productImg" src="{{order.image}}" height="70" width="70"></td>
                     <td>{{order.product}}</td>
-                    <td>{{order.price | currency }}</td>
-                    <td>{{order.status}}</td>
-                    <td><button class="btn btn-primary">cancel product</button></td>
+                    <td><a routerLink="/myOrder/{{order.id}}">view details</a></td>
                 </tr>
                 </thead>
             </table>
