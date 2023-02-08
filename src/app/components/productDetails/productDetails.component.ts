@@ -40,7 +40,7 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit {
   }
 
   checkOrder() {
-    this.router.navigate(['orderDetails']);
+    this.router.navigate(['checkDetails']);
   }
 
   handleProductQuantity(value: string) {

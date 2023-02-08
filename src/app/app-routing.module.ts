@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CartDetailsComponent } from './components/add-to-cart/cartDetails.component';
+import { AllCouponsComponent } from './components/all-coupons/all-coupons.component';
 import { CategoryComponent } from './components/category/category.component';
 import { CheckoutOrderComponent } from './components/checkout-order/checkout-order.component';
 import { HomeComponent } from './components/home/home.component';
@@ -71,6 +72,10 @@ const routes: Routes = [
   {
     path: 'checkInvoice',
     component: InvoiceComponent,
+  },
+  {
+    path: 'allCoupons',
+    component: AllCouponsComponent,
   },
 ];
 

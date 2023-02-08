@@ -2,21 +2,26 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-            <table class="table table-sm">
-                <thead>
-                <tr class="table-primary">
-                    <th>Order</th>
-                    <th>Name</th>
-                    <th>details</th>
-                </tr>
-                <tr *ngFor="let order of orders">
-                    <td><img class="productImg" src="{{order.image}}" height="70" width="70"></td>
-                    <td>{{order.product}}</td>
-                    <td><a routerLink="/myOrder/{{order.id}}">view details</a></td>
-                </tr>
-                </thead>
-            </table>
-        </div>
+                <div class="table-responsive">
+                    <table class="table table-sm align-middle">
+                        <thead>
+                            <tr class="table-primary">
+                                <th>Order</th>
+                                <th>Name</th>
+                                <th>details</th>
+                            </tr>
+                           
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let order of orders">
+                                <td><img class="productImg" src="{{order.image}}" height="70" width="70"></td>
+                                <td>{{order.product}}</td>
+                                <td><a routerLink="/myOrder/{{order.id}}">view details</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </section>

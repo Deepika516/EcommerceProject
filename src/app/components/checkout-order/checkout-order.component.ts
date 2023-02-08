@@ -84,4 +84,8 @@ export class CheckoutOrderComponent implements OnInit {
     alert('order has been successfully register');
     this.router.navigate(['myOrder']);
   }
+
+  viewCoupons() {
+    this.router.navigate(['allCoupons']);
+  }
 }

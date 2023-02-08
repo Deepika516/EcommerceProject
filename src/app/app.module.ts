@@ -27,6 +27,8 @@ import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
 import { PaymentDetailsComponent } from './components/payment-details/payment-details.component';
 import { InvoiceComponent } from './components/invoice/invoice.component';
+import { CouponDetailsComponent } from './components/coupon-details/coupon-details.component';
+import { AllCouponsComponent } from './components/all-coupons/all-coupons.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { InvoiceComponent } from './components/invoice/invoice.component';
     OrderDetailsComponent,
     PaymentDetailsComponent,
     InvoiceComponent,
+    CouponDetailsComponent,
+    AllCouponsComponent,
   ],
   imports: [
     BrowserModule,
