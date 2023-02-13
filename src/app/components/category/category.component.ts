@@ -18,6 +18,7 @@ export class CategoryComponent implements OnInit {
   public editType = 'fullRow';
   public rowData: ICategory[] = [];
   private gridApi!: GridApi;
+  selectedRows: ICategory[] = [];
   public rowSelection: 'single' | 'multiple' = 'single';
   constructor(
     private http: HttpClient,
@@ -28,10 +29,7 @@ export class CategoryComponent implements OnInit {
   ngOnInit(): void {}
 
   columns = [
-    { headerName: 'IMAGE', field: 'img', width: 90, minWidth: 50 },
-
     { headerName: 'ID', field: 'id', width: 90, minWidth: 50 },
-
     {
       headerName: 'CATEGORY_TITLE',
       field: 'categoryTitle',
@@ -53,5 +51,17 @@ export class CategoryComponent implements OnInit {
       .subscribe((category: ICategory[]) => {
         this.rowData = category;
       });
+  }
+
+  onSelectionChanged() {
+    this.selectedRows = this.gridApi.getSelectedRows();
+  }
+
+  onDelete() {
+    this.gridApi.applyTransaction({ remove: this.selectedRows });
+  }
+
+  onAddition() {
+    this.gridApi.applyTransaction({ add: [{}] });
   }
 }

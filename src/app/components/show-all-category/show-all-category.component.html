@@ -1,29 +1,14 @@
-
-    <div class="container">
-        <div class="row">
-           
-                <!-- <div class="col-md-3" *ngFor="let cat of categories">
-                    <div class="category-wrapper position-relative mb-2">
-                        <img src="{{cat.img}}" class="w-100" alt="image" >
-                        <button class="btn btn-outline-primary position-absolute top-50 start-50 translate-middle" type="button">{{cat.categoryTitle}}</button>
-                    </div>
-                </div>      -->
-
-                <div class="row row-cols-1 row-cols-md-2 g-4">
-                   
-                      <div class="card col-md-3 me-4" *ngFor="let cat of categories">
-                        <img src="{{cat.img}}" class="card-img-top" alt="image">
-                        <div class="card-body">
-                          <h5 class="card text-center">{{cat.categoryTitle}}</h5>
-                        </div>
-                    
-                    </div>
-              
+<section class="py-5">
+<div class="container">
+    <div class="row">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="card col-md-3 me-4" *ngFor="let cat of categories">
+                <img src="{{cat.img}}" class="card-img-top" alt="image">
+                <div class="card-body">
+                    <a class="nav-link px-md-3 text-center" routerLink='/products/{{cat.categoryTitle}}'>{{cat.categoryTitle}}</a>
+                </div>
+            </div>
         </div>
     </div>
-
-                
-                
-
-
-    
+</div>
+</section>

@@ -15,17 +15,17 @@ export class ProductService {
     private formBuilder: FormBuilder
   ) {}
 
-  addProduct() {}
-
-  updateProduct() {}
-
   readAllProducts(): Observable<IProduct[]> {
-    debugger;
     return this.http.get<IProduct[]>('http://localhost:3003/prods');
   }
 
   readProductById(id: number): Observable<IProduct[]> {
-    debugger;
     return this.http.get<IProduct[]>(`http://localhost:3003/prods/${id}`);
+  }
+
+  readProductByCategory(category: string): Observable<IProduct[]> {
+    return this.http.get<IProduct[]>(
+      `http://localhost:3003/products/${category}`
+    );
   }
 }

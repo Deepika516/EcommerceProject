@@ -15,8 +15,9 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0">
 
-              <li class="nav-item login-signup position-relative ps-md-2 ms-md-2">
-                <a class="nav-link px-md-3" routerLink="/home">Home</a>
+              <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                true}">
+                <a class="nav-link px-md-3" routerLink="/">Home</a>
               </li>
 
               <li class="nav-item login-signup position-relative ps-md-2 ms-md-2">
@@ -32,10 +33,6 @@
 
 
 
-
-
-
-
           <ul class="list-unstyled list-inline m-0 mb-2 mb-lg-0">
             <!-- for search area -->
             <li class="list-inline-item">
@@ -48,37 +45,23 @@
 
             <!-- for user login area -->
             <li class="list-inline-item">
-              <div class="dropdown">
-                <a class="dropdown-toggle text-dark" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  <i class="bi bi-person"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-                  <li> <a class="nav-link px-md-3" routerLink="/login">Login</a></li>
-                  <li> <a class="nav-link px-md-3" routerLink="/signup">Register</a></li>
-                  <li> <a class="nav-link px-md-3" href="#" role="button">Logout</a></li>
-                </ul>
-              </div>
-            </li>
+              <a class="nav-link px-md-3" routerLink="/login" *ngIf="!(isUserLoggedIn$|async)">Login</a></li>
+              <li class="list-inline-item">
+             <a class="nav-link px-md-3" href="#" role="button" *ngIf="(isUserLoggedIn$|async)">Logout</a></li>
+           
 
             <!-- for admin -->
-            <li class="list-inline-item">
-              <div class="dropdown">
-                <a class="dropdown-toggle text-dark" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  <i class="bi bi-person-lock"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-                  <li> <a class="nav-link px-md-3" routerLink="/products">Add Products</a></li>
-                  <li> <a class="nav-link px-md-3" routerLink="/category">Add Category</a></li>
-                </ul>
-              </div>
-            </li>
+            
+                  <!-- <li class="list-inline-item"> <a class="nav-link px-md-3" routerLink="/products">Add Products</a></li>
+                  <li class="list-inline-item"> <a class="nav-link px-md-3" routerLink="/category">Add Category</a></li>
+                  <li class="list-inline-item"> <a class="nav-link px-md-3" routerLink="/coupons">Add Coupon</a></li>
+                  <li class="list-inline-item"> <a class="nav-link px-md-3" routerLink="/allOrders">All Orders</a></li> -->
+            
 
             <!-- for cart -->
             <li class="list-inline-item">
               <a id="cartButton">
-                <i class="bi bi-cart" routerLink="/cartDetails"></i>
+                <i class="bi bi-cart" routerLink="/cartDetails" *ngIf="(isUserLoggedIn$|async)"></i>
               </a>
             </li>
           </ul>

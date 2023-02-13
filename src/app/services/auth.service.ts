@@ -7,6 +7,7 @@ import { IUser } from '../interfaces/user.interface';
   providedIn: 'root',
 })
 export class AuthService {
+  isLoggedIn = false;
   constructor(private http: HttpClient) {}
 
   onsignUp(
@@ -27,6 +28,17 @@ export class AuthService {
   }
 
   onLogin(): Observable<IUser[]> {
+    this.isLoggedIn = true;
     return this.http.get<IUser[]>('http://localhost:3002/login');
+  }
+
+  isAuthenticated() {
+    debugger;
+    const promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(this.isLoggedIn), 800;
+      });
+    });
+    return promise;
   }
 }

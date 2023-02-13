@@ -1,0 +1,15 @@
+<section class="py-3">
+    <div ag-grid="gridOptions" class="ag-theme-bootstrap">
+         <div class="container-fluid">
+            <ag-grid-angular
+            class="ag-theme-balham"
+            [rowData]="rowData"
+            [columnDefs]="columns"
+            [defaultColDef]="defaultColDef"
+            (gridReady)="onGridReady($event)"
+            >
+
+            </ag-grid-angular>
+        </div>
+    </div>
+</section>

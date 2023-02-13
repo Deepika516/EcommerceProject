@@ -24,6 +24,7 @@ export class ProductsComponent implements OnInit {
   public rowData: IProduct[] = [];
   private gridApi!: GridApi;
   public rowSelection: 'single' | 'multiple' = 'single';
+  selectedRows: IProduct[] = [];
 
   constructor(private productService: ProductService, private router: Router) {}
 
@@ -32,9 +33,7 @@ export class ProductsComponent implements OnInit {
   }
 
   columns = [
-    { headerName: 'IMAGE', field: 'last_name', width: 90, minWidth: 50 },
-
-    { headerName: 'ID', field: 'id', width: 90, minWidth: 50 },
+    { headerName: 'ID', field: 'id', width: 50, minWidth: 20 },
 
     { headerName: 'TITLE', field: 'title', width: 90, minWidth: 50 },
 
@@ -44,8 +43,9 @@ export class ProductsComponent implements OnInit {
       width: 90,
       minWidth: 50,
     },
+    { headerName: 'QUANTITY', field: 'quantity', width: 90, minWidth: 50 },
 
-    { headerName: 'PRICE', field: 'price', width: 170, minWidth: 90 },
+    { headerName: 'PRICE', field: 'price', width: 90, minWidth: 50 },
 
     { headerName: 'BRAND', field: 'brand', width: 90, minWidth: 50 },
 
@@ -67,27 +67,15 @@ export class ProductsComponent implements OnInit {
       });
   }
 
-  readProducts() {
-    this.productService
-      .readAllProducts()
-      .pipe(take(1))
-      .subscribe((products: IProduct[]) => {
-        this.allProducts = products;
-        console.log(this.allProducts);
-      });
+  onSelectionChanged() {
+    this.selectedRows = this.gridApi.getSelectedRows();
   }
 
-  // showCategory() {
-  //   this.categoryService
-  //     .readAllCategory()
-  //     .pipe(take(1))
-  //     .subscribe((cat: ICategory[]) => {
-  //       this.categories = cat;
-  //       console.log(cat);
-  //     });
-  // }
+  onDelete() {
+    this.gridApi.applyTransaction({ remove: this.selectedRows });
+  }
 
-  // readProducts() {
-  //   this.router.navigate(['allProducts']);
-  // }
+  onAddition() {
+    this.gridApi.applyTransaction({ add: [{}] });
+  }
 }

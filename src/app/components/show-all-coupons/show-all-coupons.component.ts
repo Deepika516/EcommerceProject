@@ -5,11 +5,11 @@ import { ICoupon } from 'src/app/interfaces/coupon.interface';
 import { CouponsService } from 'src/app/services/coupons.service';
 
 @Component({
-  selector: 'app-all-coupons',
-  templateUrl: './all-coupons.component.html',
-  styleUrls: ['./all-coupons.component.css'],
+  selector: 'app-show-all-coupons',
+  templateUrl: './show-all-coupons.component.html',
+  styleUrls: ['./show-all-coupons.component.css'],
 })
-export class AllCouponsComponent implements OnInit {
+export class ShowAllCouponsComponent implements OnInit {
   allCoupons: ICoupon[] = [];
   constructor(private couponService: CouponsService, private router: Router) {}
   hideDetail = false;
