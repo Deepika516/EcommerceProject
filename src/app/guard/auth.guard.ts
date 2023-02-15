@@ -19,6 +19,8 @@ export class AuthGuard implements CanActivate {
     private authService: AuthService,
     private router: Router
   ) {}
+
+  //  for showing the data when the user is logged in else it will show only login page
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot

@@ -43,6 +43,7 @@ export class CategoryComponent implements OnInit {
     editable: true,
   };
 
+  // get all the details of category thru service
   onGridReady(params: GridReadyEvent): void {
     this.gridApi = params.api;
     this.categoryService
@@ -52,15 +53,15 @@ export class CategoryComponent implements OnInit {
         this.rowData = category;
       });
   }
-
+  // selection of specific row
   onSelectionChanged() {
     this.selectedRows = this.gridApi.getSelectedRows();
   }
-
+  // delete the specific row according to selection
   onDelete() {
     this.gridApi.applyTransaction({ remove: this.selectedRows });
   }
-
+  // Add new category
   onAddition() {
     this.gridApi.applyTransaction({ add: [{}] });
   }

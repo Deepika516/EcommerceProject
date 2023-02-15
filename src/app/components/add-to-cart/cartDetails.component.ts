@@ -29,6 +29,7 @@ export class CartDetailsComponent implements OnInit {
     this.getCart();
   }
 
+  // getting cart details and calculate the total amont according to quantity
   getCart() {
     this.cartService
       .getCartProducts()

@@ -33,7 +33,6 @@ export class PaymentDetailsComponent implements OnInit {
       .orderInvoice()
       .pipe(take(1))
       .subscribe((payment: IRecipt) => {
-        console.log(payment);
         this.paymentDetails = payment;
       });
   }

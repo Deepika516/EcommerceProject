@@ -32,7 +32,7 @@ export class CheckoutOrderComponent implements OnInit {
     discount: 0,
     total: 0,
   };
-
+  // getting dropdown data of country and state
   ngOnInit(): void {
     this.countries = this.orderService.contory();
     this.orderDetailsForm = this.formBuilder.group({
@@ -45,6 +45,7 @@ export class CheckoutOrderComponent implements OnInit {
     this.getCart();
   }
 
+  // save the address thru POST request
   onSubmit(form: NgForm) {
     const country = form.value.country;
     const state = form.value.state;
@@ -61,7 +62,7 @@ export class CheckoutOrderComponent implements OnInit {
     let countryId = event.target.value;
     this.states = this.orderService.state().filter((e) => e.cid == countryId);
   }
-
+  // showing details of cart summary and price details
   getCart() {
     this.cartService
       .getCartProducts()

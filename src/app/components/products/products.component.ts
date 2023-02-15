@@ -28,9 +28,7 @@ export class ProductsComponent implements OnInit {
 
   constructor(private productService: ProductService, private router: Router) {}
 
-  ngOnInit(): void {
-    // this.showCategory();
-  }
+  ngOnInit(): void {}
 
   columns = [
     { headerName: 'ID', field: 'id', width: 50, minWidth: 20 },
@@ -66,15 +64,15 @@ export class ProductsComponent implements OnInit {
         this.rowData = products;
       });
   }
-
+  // for selecting specific row
   onSelectionChanged() {
     this.selectedRows = this.gridApi.getSelectedRows();
   }
-
+  //  for deleting specipic selected product
   onDelete() {
     this.gridApi.applyTransaction({ remove: this.selectedRows });
   }
-
+  // for adding new products
   onAddition() {
     this.gridApi.applyTransaction({ add: [{}] });
   }

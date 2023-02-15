@@ -12,7 +12,6 @@ import { CouponsService } from 'src/app/services/coupons.service';
 export class ShowAllCouponsComponent implements OnInit {
   allCoupons: ICoupon[] = [];
   constructor(private couponService: CouponsService, private router: Router) {}
-  hideDetail = false;
   ngOnInit(): void {
     this.readAllCoupons();
   }
@@ -22,14 +21,7 @@ export class ShowAllCouponsComponent implements OnInit {
       .ViewAllCoupons()
       .pipe(take(1))
       .subscribe((coupons: ICoupon[]) => {
-        console.log(coupons);
         this.allCoupons = coupons;
       });
-  }
-
-  readDetail() {
-    this.hideDetail = true;
-    const loadbtn = document.getElementById('viewDetail') as HTMLElement;
-    loadbtn.innerHTML = 'Hide Detail';
   }
 }

@@ -16,7 +16,7 @@ export class AllOrdersComponent implements OnInit {
   constructor(private orderService: OrderDetailsService) {}
 
   ngOnInit(): void {}
-
+  // column heading in ag gird
   columns = [
     { headerName: 'Order ID', field: 'id', width: 50, minWidth: 20 },
     { headerName: 'Order ', field: 'product', width: 50, minWidth: 20 },
@@ -33,14 +33,13 @@ export class AllOrdersComponent implements OnInit {
     flex: 1,
     editable: true,
   };
-
+  // get details of all the order thru api
   onGridReady(params: GridReadyEvent): void {
     this.gridApi = params.api;
     this.orderService
       .onViewOrders()
       .pipe(take(1))
       .subscribe((allorder: IOrder[]) => {
-        console.log(allorder);
         this.rowData = allorder;
       });
   }

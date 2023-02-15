@@ -3,25 +3,16 @@
         <div class="row">
             <div class="col-md-3 card mb-4" *ngFor="let product of products">
                 <div class="product-wrapper position-relative mb-2">
-                    <img src="{{product.image}}" class="w-100 product-img"  alt="image" >
-                    <a class="nav-link px-md-3 text-center" routerLink='/allProducts/{{product.id}}'>{{product.title}}</a>
+                    <img src="{{product.image}}" class="w-100 product-img" alt="image">
+                    <a class="nav-link px-md-3 text-center"
+                        routerLink='/allProducts/{{product.id}}'>{{product.title}}</a>
                 </div>
-            
-    </div>
+            </div>
         </div>
     </div>
-</section> 
+</section>
 
 
    
-    <div class="container">
-        <div class="row">
-            <div class="card-detail" style="width: 18rem;" *ngFor="let detail of productDetails">
-                <img src="{{detail.image}}" class="card-img-top" alt="image">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
-        </div>
-    </div>
+    
    

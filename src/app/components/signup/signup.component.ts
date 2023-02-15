@@ -36,7 +36,6 @@ export class SignupComponent implements OnInit {
     });
   }
   onSubmit(form: NgForm) {
-    debugger;
     const firstName = form.value.first_name;
     const lastName = form.value.last_name;
     const gen = form.value.gender;
@@ -46,7 +45,6 @@ export class SignupComponent implements OnInit {
       .onsignUp(firstName, lastName, gen, email, pass)
       .subscribe((resp: IUser[]) => {
         alert('Signup Successfull');
-        console.log(resp);
       });
   }
 }

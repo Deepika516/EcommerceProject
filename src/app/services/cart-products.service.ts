@@ -27,10 +27,4 @@ export class CartProductsService {
   getCartProducts(): Observable<ICart[]> {
     return this.http.get<ICart[]>('http://localhost:3005/getCartProducts');
   }
-
-  removeProduct(id: number): Observable<ICart[]> {
-    return this.http.delete<ICart[]>(
-      `http://localhost:3005/getCartProducts/${id}`
-    );
-  }
 }

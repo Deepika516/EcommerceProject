@@ -27,7 +27,7 @@ export class InvoiceComponent implements OnInit {
   ngOnInit(): void {
     this.viewInvoice();
   }
-
+  // showing invoice details thru api
   viewInvoice() {
     this.orderDetails
       .orderInvoice()

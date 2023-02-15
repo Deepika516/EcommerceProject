@@ -24,6 +24,7 @@ export class CouponsComponent implements OnInit {
   selectedRows: ICoupon[] = [];
 
   ngOnInit(): void {}
+  // showing heading of every column thru  ag grid
   columns = [
     { headerName: 'ID', field: 'id', width: 50, minWidth: 20 },
     { headerName: 'Coupon', field: 'coupon', width: 50, minWidth: 20 },
@@ -38,14 +39,13 @@ export class CouponsComponent implements OnInit {
     flex: 1,
     editable: true,
   };
-
+  //  showing all coupons data
   onGridReady(params: GridReadyEvent) {
     this.gridApi = params.api;
     this.couponService
       .ViewAllCoupons()
       .pipe(take(1))
       .subscribe((coupons: ICoupon[]) => {
-        console.log(coupons);
         this.rowData = coupons;
       });
   }
@@ -58,7 +58,7 @@ export class CouponsComponent implements OnInit {
   onDelete() {
     this.gridApi.applyTransaction({ remove: this.selectedRows });
   }
-
+  // for adding new coupon
   onAddition() {
     this.gridApi.applyTransaction({ add: [{}] });
   }

@@ -27,7 +27,6 @@ export class ShowAllCategoryComponent implements OnInit {
       .pipe(take(1))
       .subscribe((data: ICategory[]) => {
         this.categories = data;
-        console.log(data);
       });
   }
 }

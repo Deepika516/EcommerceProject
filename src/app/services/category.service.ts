@@ -10,12 +10,7 @@ import { ICategory } from '../interfaces/category.interface';
 export class CategoryService {
   constructor(private http: HttpClient, private router: Router) {}
 
-  addCategory() {}
-
-  updateCategory() {}
-
   readAllCategory(): Observable<ICategory[]> {
-    debugger;
     return this.http.get<ICategory[]>('http://localhost:3004/categories');
   }
 }

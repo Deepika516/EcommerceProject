@@ -16,27 +16,24 @@ export class ShowAllProductsComponent implements OnInit {
   ngOnInit(): void {
     this.onShowProducts();
   }
-
+  // get all the products
   onShowProducts() {
-    debugger;
     this.productService
       .readAllProducts()
       .pipe(take(1))
       .subscribe((res: IProduct[]) => {
         this.products = res;
-        console.log(res);
       });
   }
 
+  // get product by id
   onShowProductById(event: IProduct) {
     let prodId = event.id;
     this.productService
       .readProductById(prodId)
       .pipe(take(1))
       .subscribe((proRes: IProduct[]) => {
-        console.log(proRes);
         this.productDetails = proRes.filter((e) => e.id === prodId);
-        console.log(this.productDetails);
       });
   }
 }

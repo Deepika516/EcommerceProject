@@ -21,7 +21,6 @@ export class MyOrdersComponent implements OnInit {
       .onViewOrders()
       .pipe(take(1))
       .subscribe((order: IOrder[]) => {
-        console.log(order);
         this.orders = order;
       });
   }

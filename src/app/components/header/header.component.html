@@ -6,6 +6,7 @@
           <a class="navbar-brand fw-bold" href="#">
             Zepto<span class="text-danger">Mart</span>
           </a>
+
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -28,6 +29,21 @@
                 <a class="nav-link px-md-3" routerLink="/allProducts">All Products</a>
               </li>
 
+              <li class="nav-item">
+                <a class="nav-link px-md-3" routerLink="/products" *ngIf="(isUserLoggedIn$|async)">Add Products</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link px-md-3" routerLink="/category" *ngIf="(isUserLoggedIn$|async)">Add Category</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link px-md-3" routerLink="/coupons" *ngIf="(isUserLoggedIn$|async)">Add Coupon</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link px-md-3" routerLink="/allOrders" *ngIf="(isUserLoggedIn$|async)">All Orders</a>
+              </li>
             </ul>
           </div>
 
@@ -35,33 +51,34 @@
 
           <ul class="list-unstyled list-inline m-0 mb-2 mb-lg-0">
             <!-- for search area -->
-            <li class="list-inline-item">
-
+            <!-- <li class="list-inline-item">
               <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-dark" type="submit"><i class="bi bi-search"></i></button>
               </form>
-            </li>
+            </li> -->
 
-            <!-- for user login area -->
+            <!--for user login area-->
             <li class="list-inline-item">
-              <a class="nav-link px-md-3" routerLink="/login" *ngIf="!(isUserLoggedIn$|async)">Login</a></li>
-              <li class="list-inline-item">
-             <a class="nav-link px-md-3" href="#" role="button" *ngIf="(isUserLoggedIn$|async)">Logout</a></li>
-           
+              <a class="nav-link px-md-3" routerLink="/login" *ngIf="!(isUserLoggedIn$|async)">
+                Login
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="nav-link px-md-3" href="#" role="button" *ngIf="(isUserLoggedIn$|async)">
+                Logout
+              </a>
+            </li>
+            <!-- <li class="list-inline-item">
+                <h3>
+                  <i class="bi bi-person"></i>
+                </h3>
+             </li> -->
 
-            <!-- for admin -->
-            
-                  <!-- <li class="list-inline-item"> <a class="nav-link px-md-3" routerLink="/products">Add Products</a></li>
-                  <li class="list-inline-item"> <a class="nav-link px-md-3" routerLink="/category">Add Category</a></li>
-                  <li class="list-inline-item"> <a class="nav-link px-md-3" routerLink="/coupons">Add Coupon</a></li>
-                  <li class="list-inline-item"> <a class="nav-link px-md-3" routerLink="/allOrders">All Orders</a></li> -->
-            
-
-            <!-- for cart -->
+            <!--for cart-->
             <li class="list-inline-item">
               <a id="cartButton">
-                <i class="bi bi-cart" routerLink="/cartDetails" *ngIf="(isUserLoggedIn$|async)"></i>
+                <h3><i class="bi bi-cart" routerLink="/cartDetails" *ngIf="(isUserLoggedIn$|async)"></i></h3>
               </a>
             </li>
           </ul>

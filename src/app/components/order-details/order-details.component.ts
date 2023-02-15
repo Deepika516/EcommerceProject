@@ -22,18 +22,15 @@ export class OrderDetailsComponent implements OnInit {
     private orderService: OrderDetailsService,
     private router: Router
   ) {}
-
+  // here if fetch the id from url thru activated route and use that id to fetch specific orders details
   ngOnInit(): void {
     let orderId = this.activatedRoute.snapshot.paramMap.get('id');
-    console.log(orderId);
     orderId &&
       this.orderService
         .onViewOrderDetail(+orderId)
         .pipe(take(1))
         .subscribe((detail: IOrder) => {
-          console.log(detail);
           this.orderData = detail;
-          console.log(this.orderData);
         });
   }
 }

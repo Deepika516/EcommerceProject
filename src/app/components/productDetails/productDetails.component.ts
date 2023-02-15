@@ -10,7 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
   templateUrl: './productDetails.component.html',
   styleUrls: ['./productDetails.component.css'],
 })
-export class ProductDetailsComponent implements OnInit, AfterViewInit {
+export class ProductDetailsComponent implements OnInit {
   productData: any;
   productQuantity: number = 1;
   constructor(
@@ -20,17 +20,14 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit {
     private cartProduct: CartProductsService
   ) {}
 
-  ngAfterViewInit(): void {}
-
+  // fetching details from route and then use that detail in api so that we get specific product details
   ngOnInit(): void {
     let productId = this.activateRoute.snapshot.paramMap.get('id');
-    console.log(productId);
     productId &&
       this.productService
         .readProductById(+productId)
         .pipe(take(1))
         .subscribe((Result: IProduct[]) => {
-          console.log(Result);
           this.productData = Result;
         });
   }
@@ -43,6 +40,7 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit {
     this.router.navigate(['checkDetails']);
   }
 
+  // to update quantity if user wants more they can update and vice versa
   handleProductQuantity(value: string) {
     if (this.productQuantity < 25 && value === 'plus') {
       this.productQuantity += 1;
@@ -51,10 +49,10 @@ export class ProductDetailsComponent implements OnInit, AfterViewInit {
     }
   }
 
+  // adding this updated quantity in cart
   addToCart() {
     if (this.productData) {
       this.productData.quantity = this.productQuantity;
-      console.log(this.productData);
     }
   }
 }

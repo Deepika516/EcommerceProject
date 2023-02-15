@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.isUserLoggedIn$ = this.authorizationService.IsLoggedIn;
   }
-
+  // for logout it remove the currentUser from local storage
   onLogout() {
     this.authorizationService.logout();
     localStorage.removeItem('currentUser');

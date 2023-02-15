@@ -17,16 +17,10 @@ export class AutherizationService {
   }
 
   login(cu: IUser) {
-    debugger;
     if (cu.email !== '' && cu.password !== '') {
       this.isUserLoggedIn.next(true);
       this.router.navigate(['/allProducts']);
     }
-    // debugger;
-    // if (cu.email !== 'admin123@gmail.com' && cu.password !== 'admin123') {
-    //   this.isUserLoggedIn.next(true);
-    //   this.router.navigate(['/products']);
-    // }
   }
   adminLogin(admin: IUser) {
     if (admin.email !== 'admin123@gmail.com' && admin.password !== 'admin123') {

@@ -28,20 +28,20 @@ export class LoginComponent implements OnInit {
       password: [''],
     });
   }
+  // in this function it check if login is invalid it returns
+  // then it will check from the api if it matches the email and password it goes in next check
+  // then it get the email id n password wat we fill and check if its tru it gives true
   onUserLogin() {
-    debugger;
     {
       if (this.loginform.invalid) {
         return;
       } else if (this.loginform.valid) {
         this.autherizationService.login(this.loginform.value);
       }
-      debugger;
       this.authService
         .onLogin()
         .pipe(take(1))
         .subscribe((resp: IUser[]) => {
-          console.log(resp);
           const mail = this.loginform.value.email;
           const pass = this.loginform.value.password;
           localStorage.setItem('currentUser', mail);
@@ -57,22 +57,4 @@ export class LoginComponent implements OnInit {
     }
     this.authService;
   }
-
-  // this.authService.login().pipe(take(1)).subscribe((respData:IUser[])=>
-  //   {
-  //    const email_value=this.loginform.value.email;
-  //    const password_value=this.loginform.value.password;
-  //    localStorage.setItem("currentUser",email_value)
-  //       const check_user=respData.find((u:IUser)=>{
-  //         return u.email===email_value && u.password===password_value
-  //       })
-  //       if(check_user)
-  //       {
-  //         alert("Login Successfull");
-  //       }
-  //       else
-  //       alert("User Not Found");
-  //   })
-  // }
-  // }
 }
