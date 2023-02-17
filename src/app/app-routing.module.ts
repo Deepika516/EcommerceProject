@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CartDetailsComponent } from './components/add-to-cart/cartDetails.component';
 import { ShowAllCouponsComponent } from './components/show-all-coupons/show-all-coupons.component';
-import { CategoryComponent } from './components/category/category.component';
+
 import { CheckoutOrderComponent } from './components/checkout-order/checkout-order.component';
 import { HomeComponent } from './components/home/home.component';
 import { InvoiceComponent } from './components/invoice/invoice.component';
@@ -11,37 +11,42 @@ import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
 import { PaymentDetailsComponent } from './components/payment-details/payment-details.component';
 import { ProductDetailsComponent } from './components/productDetails/productDetails.component';
-import { ProductsComponent } from './components/products/products.component';
+
 import { ShowAllCategoryComponent } from './components/show-all-category/show-all-category.component';
 import { ShowAllProductsComponent } from './components/show-all-products/show-all-products.component';
-import { SignupComponent } from './components/signup/signup.component';
+
 import { CategoryProductsComponent } from './components/category-products/category-products.component';
-import { CouponsComponent } from './components/coupons/coupons.component';
+
 import { AllOrdersComponent } from './components/all-orders/all-orders.component';
 import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
   {
-    path: 'signup',
-    component: SignupComponent,
+    path: '',
+    loadChildren: () =>
+      import('./components/signup/signup.module').then((m) => m.SignupModule),
   },
   {
     path: 'login',
     component: LoginComponent,
   },
   {
-    path: '',
+    path: 'home',
     component: HomeComponent,
   },
   {
-    path: 'products',
-    component: ProductsComponent,
-    canActivate: [AuthGuard],
+    path: '',
+    loadChildren: () =>
+      import('./components/products/products.module').then(
+        (m) => m.ProductsModule
+      ),
   },
   {
-    path: 'category',
-    component: CategoryComponent,
-    canActivate: [AuthGuard],
+    path: '',
+    loadChildren: () =>
+      import('./components/category/category.module').then(
+        (n) => n.CategoryModule
+      ),
   },
   {
     path: 'allCategory',
@@ -97,9 +102,11 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'coupons',
-    component: CouponsComponent,
-    canActivate: [AuthGuard],
+    path: '',
+    loadChildren: () =>
+      import('./components/coupons/coupons.module').then(
+        (m) => m.CouponsModule
+      ),
   },
   {
     path: 'products/:category',

@@ -19,13 +19,14 @@
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
     "@syncfusion/ej2-angular-grids": "^20.4.44",
+    "@syncfusion/ej2-material-theme": "~20.4.44",
     "ag-grid-angular": "^29.0.0",
     "ag-grid-community": "^29.0.0",
     "cors": "^2.8.5",
+    "ngx-permissions": "^14.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4",
-    "@syncfusion/ej2-material-theme": "~20.4.44"
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.0.6",

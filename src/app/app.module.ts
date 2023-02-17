@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AgGridModule } from 'ag-grid-angular';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 import { AppComponent } from './app.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -64,6 +65,7 @@ import { AllOrdersComponent } from './components/all-orders/all-orders.component
     AgGridModule,
     GridModule,
     PagerModule,
+    NgxPermissionsModule.forRoot(),
   ],
   providers: [EditService],
   bootstrap: [AppComponent],
