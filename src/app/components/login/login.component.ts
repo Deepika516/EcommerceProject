@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
           const pass = this.loginform.value.password;
           localStorage.setItem('currentUser', mail);
           const check = resp.find((e: IUser) => {
-            return e.email === mail && e.password === pass;
+            return e.email == 'tiny123@gmail.com' && e.password == 'tiny1234';
           });
           if (check) {
             alert('login successfull');

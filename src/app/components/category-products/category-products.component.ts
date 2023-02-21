@@ -16,15 +16,15 @@ export class CategoryProductsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    debugger;
-    let categoryName =
-      this.activatedRoute.snapshot.paramMap.get('categoryTitle');
-    console.log(categoryName);
-    this.productService
-      .readProductByCategory(categoryName!)
-      .pipe(take(1))
-      .subscribe((category: IProduct[]) => {
-        console.log(category);
-      });
+    // debugger;
+    // let categoryName =
+    //   this.activatedRoute.snapshot.paramMap.get('categoryTitle');
+    // console.log(categoryName);
+    // this.productService
+    //   .readProductByCategory(categoryName!)
+    //   .pipe(take(1))
+    //   .subscribe((category: IProduct[]) => {
+    //     console.log(category);
+    //   });
   }
 }

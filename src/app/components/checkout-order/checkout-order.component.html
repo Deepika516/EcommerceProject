@@ -8,7 +8,7 @@
                     <form #orderDetailsForm="ngForm" (ngSubmit)="onSubmit(orderDetailsForm)">
                         <div class="mb-3">
                             <label class="form-check-label fw-bold mb-1">Country</label>
-                            <select class="form-select" ngModel name="country" (change)="onChangeConutry($event)">
+                            <select class="form-select" ngModel name="country" required (change)="onChangeConutry($event)">
                                 <option selected>Select</option>
                                 <option *ngFor="let country of countries" value="{{country.id}}">{{country.countryName}}
                                 </option>
@@ -17,7 +17,7 @@
 
                         <div class="mb-3">
                             <label class="form-check-label fw-bold mb-1">State</label>
-                            <select class="form-select" ngModel name="state">
+                            <select class="form-select" ngModel name="state" required>
                                 <option selected>Select</option>
                                 <option *ngFor="let state of states" value="{{state.id}}">{{state.stateName}}</option>
                             </select>
@@ -26,23 +26,23 @@
                         <div class="mb-3">
                             <label class="form-check-label fw-bold mb-1">Address</label>
                             <input class="form-control" type="text" ngModel name="address"
-                                placeholder="Enter your Address">
+                                placeholder="Enter your Address" required>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-check-label fw-bold mb-1">Email Address</label>
                             <input class="form-control" type="email" ngModel name="email"
-                                placeholder="Enter your Email">
+                                placeholder="Enter your Email" required>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-check-label fw-bold mb-1">Contact Number</label>
                             <input class="form-control" type="text" ngModel name="contact"
-                                placeholder="Enter your Contact No.">
+                                placeholder="Enter your Contact No." required>
                         </div>
 
                         <div>
-                            <input type="submit" value="Save" class="btn btn-primary w-100">
+                            <input type="submit" value="Save" class="btn btn-primary w-100" [disabled]="!orderDetailsForm.valid">
                         </div>
 
                     </form>

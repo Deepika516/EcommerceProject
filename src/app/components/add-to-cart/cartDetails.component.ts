@@ -52,6 +52,22 @@ export class CartDetailsComponent implements OnInit {
       });
   }
 
+  deleteCartProduct(id: number) {
+    this.cartService.deleteCartProduct(id).subscribe((cartupdate) => {
+      console.log(cartupdate);
+      this.getCart();
+    });
+  }
+
+  deleteAll() {
+    this.cartService
+      .deleteCartProducts()
+      .pipe(take(1))
+      .subscribe((emptyCart) => {
+        console.log(emptyCart);
+      });
+  }
+
   checkOrder() {
     this.router.navigate(['checkDetails']);
   }

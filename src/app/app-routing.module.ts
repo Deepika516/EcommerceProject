@@ -21,6 +21,7 @@ import { AllOrdersComponent } from './components/all-orders/all-orders.component
 import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   {
     path: '',
     loadChildren: () =>
@@ -30,10 +31,7 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
   },
-  {
-    path: 'home',
-    component: HomeComponent,
-  },
+
   {
     path: '',
     loadChildren: () =>

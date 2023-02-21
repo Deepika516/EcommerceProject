@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgxRolesService, NgxPermissionsService } from 'ngx-permissions';
 import { Observable } from 'rxjs/internal/Observable';
 import { AutherizationService } from 'src/app/services/autherization.service';
 
@@ -13,7 +14,9 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private authorizationService: AutherizationService
+    private authorizationService: AutherizationService,
+    private rolesService: NgxRolesService,
+    private permissionsService: NgxPermissionsService
   ) {}
 
   ngOnInit(): void {

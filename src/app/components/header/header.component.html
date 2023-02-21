@@ -18,8 +18,8 @@
 
               <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
                 true}">
-                <a class="nav-link px-md-3" routerLink="/home">Home</a>
-              </li>
+          <a class="nav-link px-md-3" routerLink="/">Home </a>
+        </li>
 
               <li class="nav-item login-signup position-relative ps-md-2 ms-md-2">
                 <a class="nav-link px-md-3" routerLink="/allCategory">All Categories</a>
@@ -29,9 +29,11 @@
                 <a class="nav-link px-md-3" routerLink="/allProducts">All Products</a>
               </li>
 
+              
               <li class="nav-item">
                 <a class="nav-link px-md-3" routerLink="/products" *ngIf="(isUserLoggedIn$|async)">Add Products</a>
               </li>
+            
 
               <li class="nav-item">
                 <a class="nav-link px-md-3" routerLink="/category" *ngIf="(isUserLoggedIn$|async)">Add Category</a>
