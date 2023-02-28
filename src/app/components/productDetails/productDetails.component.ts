@@ -12,6 +12,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductDetailsComponent implements OnInit {
   productData: any;
+
   productQuantity: number = 1;
   constructor(
     private activateRoute: ActivatedRoute,
@@ -20,7 +21,6 @@ export class ProductDetailsComponent implements OnInit {
     private cartProduct: CartProductsService
   ) {}
 
-  // fetching details from route and then use that detail in api so that we get specific product details
   ngOnInit(): void {
     let productId = this.activateRoute.snapshot.paramMap.get('id');
     productId &&
@@ -31,6 +31,8 @@ export class ProductDetailsComponent implements OnInit {
           this.productData = Result;
         });
   }
+
+  // fetching details from route and then use that detail in api so that we get specific product details
 
   removeProduct() {
     this.router.navigate(['allProducts']);

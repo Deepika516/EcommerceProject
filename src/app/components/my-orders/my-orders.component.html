@@ -8,7 +8,7 @@
                             <tr class="table-primary">
                                 <th>Order</th>
                                 <th>Name</th>
-                                <th>details</th>
+                                <th>Details</th>
                             </tr>
                            
                         </thead>
@@ -16,7 +16,7 @@
                             <tr *ngFor="let order of orders">
                                 <td><img class="productImg" src="{{order.image}}" height="70" width="70"></td>
                                 <td>{{order.product}}</td>
-                                <td><a routerLink="/myOrder/{{order.id}}">view details</a></td>
+                                <td><a routerLink="/myOrder/{{order.id}}">View Details</a></td>
                             </tr>
                         </tbody>
                     </table>

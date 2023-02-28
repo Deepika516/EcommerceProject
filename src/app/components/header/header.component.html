@@ -28,8 +28,8 @@
               <li class="nav-item">
                 <a class="nav-link px-md-3" routerLink="/allProducts">All Products</a>
               </li>
-
-              
+<!-- admin role block  -->
+              <ng-container *ngIf="user?.role==='admin'">
               <li class="nav-item">
                 <a class="nav-link px-md-3" routerLink="/products" *ngIf="(isUserLoggedIn$|async)">Add Products</a>
               </li>
@@ -46,6 +46,7 @@
               <li class="nav-item">
                 <a class="nav-link px-md-3" routerLink="/allOrders" *ngIf="(isUserLoggedIn$|async)">All Orders</a>
               </li>
+            </ng-container>
             </ul>
           </div>
 

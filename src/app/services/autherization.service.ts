@@ -22,12 +22,7 @@ export class AutherizationService {
       this.router.navigate(['/allProducts']);
     }
   }
-  adminLogin(admin: IUser) {
-    if (admin.email !== 'admin123@gmail.com' && admin.password !== 'admin123') {
-      this.isUserLoggedIn.next(true);
-      this.router.navigate(['/product']);
-    }
-  }
+
   logout() {
     this.isUserLoggedIn.next(false);
     this.router.navigate(['/login']);

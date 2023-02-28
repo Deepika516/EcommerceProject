@@ -1,18 +1,15 @@
 <section class="products-sec py-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-3 card mb-4" *ngFor="let product of products">
-                <div class="product-wrapper position-relative mb-2">
-                    <img src="{{product.image}}" class="w-100 product-img" alt="image">
-                    <a class="nav-link px-md-3 text-center"
-                        routerLink='/allProducts/{{product.id}}'>{{product.title}}</a>
+            <div class="col-md-3" *ngFor="let product of products">
+                <div class="card mb-4">
+                    <div class="product-wrapper mb-2">
+                        <img src="{{product.image}}" class="w-100 product-img" alt="image">
+                        <a class="nav-link px-md-3 text-center"
+                            routerLink='/allProducts/{{product.id}}'>{{product.title}}</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-
-   
-    
-   

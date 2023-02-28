@@ -1,10 +1,10 @@
 
 <section class="py-5">
 <div class="container">
-    <div class="row d-flex">
+    <div class="row d-flex" *ngIf="productData">
         <div class="col-md-6">
             <img
-          [src]="productData.image"
+          src="{{productData.image}}"
           alt="image"
           class="img-fluid rounded-start"
         />
@@ -18,24 +18,25 @@
                 {{productData.description}}
             </p>
             
-                <button type="button" class="btn btn-primary btn-sm me-2" data-mdb-toggle="tooltip"
+                <button type="button" class="btn btn-danger btn-sm me-2" data-mdb-toggle="tooltip"
                   title="Remove item" (click)="removeProduct()">
                   <i class="bi bi-trash3"></i>
                 </button>
-                <button type="button" class="btn btn-danger btn-sm" data-mdb-toggle="tooltip"
+                <button type="button" class="btn btn-outline-danger btn-sm" data-mdb-toggle="tooltip"
                   title="Move to the wish list">
                   <i class="bi bi-heart-fill"></i>
                 </button>
                 <div class="quantity-grp mb-4">
-                <button class="min-quantity" (click)="handleProductQuantity('minus')">-</button>
-                <input class="quantity-input" type="text" value="{{productQuantity}}">
-                <button  class="max-quantity" (click)="handleProductQuantity('plus')">+</button>
+                <button type="button" class="min-quantity btn btn-outline-primary" (click)="handleProductQuantity('minus')">-</button>
+                <input class="quantity-input rounded-2 mx-2" type="text" value="{{productQuantity}}">
+                <button  type="button" class="max-quantity btn  btn-outline-primary" (click)="handleProductQuantity('plus')">+</button>
                 </div>
 
-          <button class="btn btn-success me-4" (click)="checkOrder()">Buy Now</button>
+          <button class="btn btn-success me-2" (click)="checkOrder()">Buy Now</button>
           <button class="btn btn-primary" (click)="addToCart()"> Add to Cart</button>
 
         </div>
+      
     </div>
 </div>
 </section>

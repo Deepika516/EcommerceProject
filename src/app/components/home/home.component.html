@@ -3,7 +3,7 @@
 <body>
 
   <!--Banner Section  -->
-  <section class="position-relative banner-sec py-md-0 py-5 ">
+  <section class="position-relative banner-sec py-md-0 py-5">
     <img src="../../../assets/img/shoppingBanner.png" class="w-100">
     <div class="container">
       <div class="row">
@@ -12,7 +12,7 @@
             <h1 class="fw-normal"><span class="fw-bold">Brand, You must have...!</span></h1>
             <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua.</p>
-            <button type="button" class="btn btn-outline-primary">Shop Now...!!</button>
+            <button type="button" class="btn btn-outline-white" (click)="checkOrder() ">Shop Now...!!</button>
           </div>
         </div>
       </div>
@@ -26,12 +26,12 @@
         <div class="col-md-3 left-wrapper">
           <div class="category-wrapper position-relative mb-4">
             <img src="../../../assets/img/men.png" class="w-100" alt="image">
-            <button class="btn btn-outline-primary position-absolute top-50 start-50 translate-middle"
+            <button class="btn btn-light position-absolute top-50 start-50 translate-middle"
               type="button">MEN</button>
           </div>
           <div class="category-wrapper position-relative">
             <img src="../../../assets/img/newarival.jpg" class="w-100" alt="image">
-            <button class="btn btn-outline-primary position-absolute top-50 start-50 translate-middle"
+            <button class="btn btn-light position-absolute top-50 start-50 translate-middle"
               type="button">NEW</button>
           </div>
 
@@ -41,7 +41,7 @@
             <img
               src="https://img.freepik.com/free-photo/happy-lady-stylish-skirt-boater-posing-pink-wall_197531-23653.jpg?w=740&t=st=1674292083~exp=1674292683~hmac=8665381f3f56e065361ac44159c9b78fdfd7febd758cfb16db3c9139cc82738b"
               class="w-100" alt="image">
-            <button class="btn btn-outline-success position-absolute top-50 start-50 translate-middle"
+            <button class="btn btn-light position-absolute top-50 start-50 translate-middle"
               type="button">WOMEN</button>
           </div>
         </div>
@@ -51,21 +51,21 @@
               <img
                 src="https://img.freepik.com/premium-photo/little-caucasian-girl-with-winter-jacket-isolated-pink-background-surprised-pointing-side_1368-366733.jpg?w=740"
                 class="w-100" alt="image">
-              <button class="btn btn-outline-primary position-absolute top-50 start-50 translate-middle"
+              <button class="btn btn-light position-absolute top-50 start-50 translate-middle"
                 type="button">SALE</button>
             </div>
             <div class="category-wrapper position-relative">
               <img
                 src="https://img.freepik.com/free-photo/digital-device-eletronic-networking-media_53876-31695.jpg?w=740&t=st=1674490489~exp=1674491089~hmac=1142eac275f42f91876e66bf7a6eadbaf775cf212396246cc1c92fb6562ac585"
                 class="w-100" alt="image">
-              <button class="btn btn-outline-primary position-absolute top-50 start-50 translate-middle"
+              <button class="btn btn-light position-absolute top-50 start-50 translate-middle"
                 type="button">ELECTRONIC</button>
             </div>
           </div>
 
           <div class="category-wrapper position-relative">
             <img src="../../../assets/img/accessory.jpg" class="w-100" alt="image">
-            <button class="btn btn-outline-primary position-absolute top-50 start-50 translate-middle"
+            <button class="btn btn-light position-absolute top-50 start-50 translate-middle"
               type="button">SALE</button>
           </div>
 
@@ -123,7 +123,7 @@
   </section>
 
   <!-- New Arrivals section -->
-  <section>
+  <section class="py-5">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -132,23 +132,41 @@
         <div class="col-md-4 mb-4">
           <div class="category-wrapper position-relative">
             <img src="../../../assets/img/accessory.jpg" class="w-100" alt="image">
-            <button class="btn btn-outline-primary position-absolute top-50 start-50 translate-middle"
+            <button class="btn btn-light position-absolute top-50 start-50 translate-middle"
               type="button">SALE</button>
           </div>
         </div>
         <div class="col-md-4">
           <div class="category-wrapper position-relative">
             <img src="../../../assets/img/accessory.jpg" class="w-100" alt="image">
-            <button class="btn btn-outline-primary position-absolute top-50 start-50 translate-middle"
+            <button class="btn btn-light position-absolute top-50 start-50 translate-middle"
               type="button">SALE</button>
           </div>
         </div>
         <div class="col-md-4">
           <div class="category-wrapper position-relative">
             <img src="../../../assets/img/accessory.jpg" class="w-100" alt="image">
-            <button class="btn btn-outline-primary position-absolute top-50 start-50 translate-middle"
+            <button class="btn btn-light position-absolute top-50 start-50 translate-middle"
               type="button">SALE</button>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COUPONS  -->
+  <section class="coupons-sec">
+    <!-- <img class="response" src="" class="w-100"> -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 col-md-6">
+          <div class="py-md-0 py-5">
+            <h1 class="fw-bold text-white">Love Your Gadgets</h1>
+            <h3 class="text-white">Upto 50% OFF</h3>
+            <p class="text-white">Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.</p>
+            <button type="button" class="btn btn-outline-white" (click)="applyCoupon()">Get Offers...!!</button>
+        </div>
         </div>
       </div>
     </div>
@@ -159,7 +177,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h2 class="text-white fw-bold display-5">We develop & <br /><span class="text-primary">create quality
+          <h2 class="text-white fw-bold display-5">We develop & <br /><span class="text-danger">create quality
               care</span></h2>
         </div>
 
@@ -168,17 +186,17 @@
           <p>Germany — 785 15h Street, Office 478 Berlin, De 81566</p>
           <ul class="list-unstyled list-inline mt-4 d-flex gap-2">
             <li class="list-inline-item">
-              <a href="#">
+              <a href="#" class="text-white">
                 <i class="bi bi-facebook"></i>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#">
+              <a href="#" class="text-white">
                 <i class="bi bi-instagram"></i>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#">
+              <a href="#" class="text-white">
                 <i class="bi bi-twitter"></i>
               </a>
             </li>
@@ -187,7 +205,7 @@
 
         <div class="col-md-3 text-white">
           <h5 class="mb-3"><i class="bi bi-envelope me-2 text-white"></i>Contact</h5>
-          <a href="mailto:info@email.com">info@email.com</a>
+          <a href="mailto:info@email.com" class="text-white">info@email.com</a>
           <h5 class="mt-4">+1 840 841 25 69</h5>
         </div>
 

@@ -8,6 +8,7 @@ import { IUser } from '../interfaces/user.interface';
 })
 export class AuthService {
   isLoggedIn = false;
+  user: IUser | undefined;
   constructor(private http: HttpClient) {}
 
   // sending post request for saving details of user
@@ -33,10 +34,18 @@ export class AuthService {
     return this.http.get<IUser[]>('http://localhost:3002/login');
   }
 
+  setCurrentUser(user: IUser) {
+    this.user = user;
+  }
+
+  getCurrentUser() {
+    return this.user;
+  }
+
   isAuthenticated() {
     const promise = new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(this.isLoggedIn), 800;
+        resolve(this.isLoggedIn), 100;
       });
     });
     return promise;

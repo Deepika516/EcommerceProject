@@ -14,6 +14,7 @@ import { AutherizationService } from 'src/app/services/autherization.service';
 })
 export class LoginComponent implements OnInit {
   public loginform!: FormGroup;
+  user: IUser | undefined;
   constructor(
     private http: HttpClient,
     private authService: AuthService,
@@ -44,15 +45,26 @@ export class LoginComponent implements OnInit {
         .subscribe((resp: IUser[]) => {
           const mail = this.loginform.value.email;
           const pass = this.loginform.value.password;
-          localStorage.setItem('currentUser', mail);
-          const check = resp.find((e: IUser) => {
-            return e.email == 'tiny123@gmail.com' && e.password == 'tiny1234';
+          // localStorage.setItem('User', mail);
+          const user = resp.find((e: IUser) => {
+            return (
+              (e.email == 'tiny123@gmail.com' && e.password == 'tiny1234') ||
+              (e.email === 'admin123@gmail.com' && e.password === 'admin123')
+            );
+            console.log(resp);
           });
-          if (check) {
+
+          if (user) {
+            debugger;
+            console.log(user);
+            localStorage.setItem('User', JSON.stringify(user));
+            this.authService.setCurrentUser(user);
             alert('login successfull');
           } else {
             alert('User Not found please try again');
           }
+          this.user = this.authService.getCurrentUser();
+          console.log(this.user);
         });
     }
     this.authService;
