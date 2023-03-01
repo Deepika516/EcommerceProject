@@ -29,9 +29,12 @@ export class AuthService {
   }
 
   //  GET request for checking login status
-  onLogin(): Observable<IUser[]> {
+  onLogin(email: string, password: string): Observable<IUser[]> {
     this.isLoggedIn = true;
-    return this.http.get<IUser[]>('http://localhost:3002/login');
+    return this.http.post<IUser[]>('http://localhost:3002/login', {
+      email: email,
+      password: password,
+    });
   }
 
   setCurrentUser(user: IUser) {

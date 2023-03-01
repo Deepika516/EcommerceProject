@@ -23,7 +23,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.isUserLoggedIn$ = this.authorizationService.IsLoggedIn;
     const currentUser = localStorage.getItem('user');
-    console.log(currentUser);
     if (currentUser) {
       this.user = JSON.parse(currentUser);
     }

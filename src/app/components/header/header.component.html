@@ -29,7 +29,7 @@
                 <a class="nav-link px-md-3" routerLink="/allProducts">All Products</a>
               </li>
 <!-- admin role block  -->
-              <ng-container *ngIf="user?.role==='admin'">
+              <!-- <ng-container *ngIf="user?.role==='admin'"> -->
               <li class="nav-item">
                 <a class="nav-link px-md-3" routerLink="/products" *ngIf="(isUserLoggedIn$|async)">Add Products</a>
               </li>
@@ -46,21 +46,13 @@
               <li class="nav-item">
                 <a class="nav-link px-md-3" routerLink="/allOrders" *ngIf="(isUserLoggedIn$|async)">All Orders</a>
               </li>
-            </ng-container>
+            <!-- </ng-container> -->
             </ul>
           </div>
 
 
 
           <ul class="list-unstyled list-inline m-0 mb-2 mb-lg-0">
-            <!-- for search area -->
-            <!-- <li class="list-inline-item">
-              <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-dark" type="submit"><i class="bi bi-search"></i></button>
-              </form>
-            </li> -->
-
             <!--for user login area-->
             <li class="list-inline-item">
               <a class="nav-link px-md-3" routerLink="/login" *ngIf="!(isUserLoggedIn$|async)">
