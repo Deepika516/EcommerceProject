@@ -2,22 +2,13 @@
   <div ag-grid="gridOptions" class="ag-theme-bootstrap">
     <div class="container-fluid">
       <div class="mb-2">
-        <button class="btn btn-outline-primary btn-sm me-2"(click)=" onAddition()" >Add New Category</button>
-        <button class="btn btn-outline-danger btn-sm" (click)="onDelete()" >Remove Selected Category</button>
+        <button class="btn btn-outline-primary btn-sm me-2" (click)=" onAddition()">Add New Category</button>
+        <button class="btn btn-outline-danger btn-sm" (click)="onDelete()">Remove Selected Category</button>
       </div>
-      <ag-grid-angular 
-          class="ag-theme-balham"      
-          [columnDefs]="columns"
-          [rowData]="rowData"
-          [defaultColDef]="defaultColDef"  
-          (gridReady)="onGridReady($event)"
-          (selectionChanged)="onSelectionChanged()"
-          [rowSelection]="rowSelection"
-      >
+      <ag-grid-angular class="ag-theme-balham" [columnDefs]="columns" [rowData]="rowData"
+        [defaultColDef]="defaultColDef" (gridReady)="onGridReady($event)" (selectionChanged)="onSelectionChanged()"
+        [rowSelection]="rowSelection">
       </ag-grid-angular>
     </div>
   </div>
 </section>
-
-
-   

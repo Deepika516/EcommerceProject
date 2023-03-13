@@ -8,7 +8,8 @@
                     <form #orderDetailsForm="ngForm" (ngSubmit)="onSubmit(orderDetailsForm)">
                         <div class="mb-3">
                             <label class="form-check-label fw-bold mb-1">Country</label>
-                            <select class="form-select" ngModel name="country" required (change)="onChangeConutry($event)">
+                            <select class="form-select" ngModel name="country" required
+                                (change)="onChangeConutry($event)">
                                 <option selected>Select</option>
                                 <option *ngFor="let country of countries" value="{{country.id}}">{{country.countryName}}
                                 </option>
@@ -31,8 +32,8 @@
 
                         <div class="mb-3">
                             <label class="form-check-label fw-bold mb-1">Email Address</label>
-                            <input class="form-control" type="email" ngModel name="email"
-                                placeholder="Enter your Email" required>
+                            <input class="form-control" type="email" ngModel name="email" placeholder="Enter your Email"
+                                required>
                         </div>
 
                         <div class="mb-3">
@@ -42,7 +43,8 @@
                         </div>
 
                         <div>
-                            <input type="submit" value="Save" class="btn btn-primary w-100" [disabled]="!orderDetailsForm.valid">
+                            <input type="submit" value="Save" class="btn btn-primary w-100"
+                                [disabled]="!orderDetailsForm.valid">
                         </div>
 
                     </form>
@@ -79,9 +81,9 @@
 
                     <div>
                         <button class="btn btn-primary w-100 mb-2" (click)="viewOrders()">Place Order </button>
-                        <button class="btn btn-success w-100 mb-2"(click)="viewCoupons()">View Coupons</button>
+                        <button class="btn btn-success w-100 mb-2" (click)="viewCoupons()">View Coupons</button>
                         <input type="text" placeholder="Enter your Coupon code" class="form-control w-100 mb-2">
-                        <button class="btn btn-outline-dark w-100">Apply Coupon</button> 
+                        <button class="btn btn-outline-dark w-100">Apply Coupon</button>
                     </div>
                 </div>
             </div>
