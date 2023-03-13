@@ -44,6 +44,7 @@ export class ProductDetailsComponent implements OnInit {
 
   // to update quantity if user wants more they can update and vice versa
   handleProductQuantity(value: string) {
+    debugger;
     if (this.productQuantity < 25 && value === 'plus') {
       this.productQuantity += 1;
     } else if (this.productQuantity > 1 && value === 'minus') {
